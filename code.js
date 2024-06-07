@@ -42,4 +42,5 @@ function mark () {
 
 function gameController (playerOneName = 'Player One', 
                          playerTwoName = 'Player Two') {
+    const board = gameBoard();
 }
