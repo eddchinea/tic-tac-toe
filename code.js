@@ -40,6 +40,6 @@ function mark () {
     return { addMark, getValue }
 }
 
-function gameController () {
-    
+function gameController (playerOneName = 'Player One', 
+                         playerTwoName = 'Player Two') {
 }
