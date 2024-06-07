@@ -9,4 +9,6 @@ function gameBoard () {
             board[i].push(Mark())
         }
     }
+
+    getBoard = () => board;
 }
