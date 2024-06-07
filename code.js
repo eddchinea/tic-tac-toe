@@ -71,4 +71,6 @@ function gameController (playerOneName = 'Player One',
     }
 
     printNewRound();
+
+    return {playRound, getActivePlayer}
 }
