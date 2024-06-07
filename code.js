@@ -5,7 +5,7 @@ function gameBoard () {
 
     for (let i = 0; i < rows; i++) {
         board[i] = [];
-        for (let j = 0; i < columns; j++) {
+        for (let j = 0; j < columns; j++) {
             board[i].push(mark())
         }
     }
@@ -74,3 +74,5 @@ function gameController (playerOneName = 'Player One',
 
     return {playRound, getActivePlayer}
 }
+
+const game = gameController('Roberto', 'Eduardo');
