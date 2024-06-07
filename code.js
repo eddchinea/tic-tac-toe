@@ -50,4 +50,8 @@ function gameController (playerOneName = 'Player One',
     ];
 
     let activePlayer = players[0];
+
+    const switchPlayer = () => {
+        activePlayer = activePlayer === players[0] ? players[1] : players[0];
+    }
 }
