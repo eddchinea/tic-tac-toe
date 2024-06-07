@@ -6,7 +6,7 @@ function gameBoard () {
     for (let i = 0; i < rows; i++) {
         board[i] = [];
         for (let j = 0; i < columns; j++) {
-            board[i].push(Mark())
+            board[i].push(mark())
         }
     }
 
@@ -28,7 +28,7 @@ function gameBoard () {
     return { getBoard, placeMark, printBoard }
 }
 
-function Mark () {
+function mark () {
     let value = 0;
     
     addMark = (player) => {
@@ -38,4 +38,8 @@ function Mark () {
     getValue = () => value;
 
     return { addMark, getValue }
+}
+
+function gameController () {
+    
 }
