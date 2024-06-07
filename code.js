@@ -69,4 +69,6 @@ function gameController (playerOneName = 'Player One',
         switchPlayer();
         printNewRound();
     }
+
+    printNewRound();
 }
