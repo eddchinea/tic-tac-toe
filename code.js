@@ -11,4 +11,12 @@ function gameBoard () {
     }
 
     getBoard = () => board;
+
+    placeMark = (player, row, column) => {
+        if (board[row][column].getValue() !== 0) {
+            return
+        } else {
+            board[row][column].addMark(player)
+        }
+    }
 }
