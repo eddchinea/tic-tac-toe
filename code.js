@@ -61,4 +61,12 @@ function gameController (playerOneName = 'Player One',
         board.printBoard();
         console.log(`${activePlayer.name}'s turn`);
     }
+
+    const playRound = (row, column) => {
+        console.log(`Placing ${activePlayer}'s mark into row ${row}, column ${column}`);
+        board.placeMark(activePlayer.mark, row, column);
+
+        switchPlayer();
+        printNewRound();
+    }
 }
