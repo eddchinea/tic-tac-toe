@@ -43,4 +43,9 @@ function mark () {
 function gameController (playerOneName = 'Player One', 
                          playerTwoName = 'Player Two') {
     const board = gameBoard();
+
+    const players = [
+        {name: playerOneName, mark: 'X'},
+        {name: playerTwoName, mark: 'O'},
+    ];
 }
