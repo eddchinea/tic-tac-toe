@@ -48,4 +48,6 @@ function gameController (playerOneName = 'Player One',
         {name: playerOneName, mark: 'X'},
         {name: playerTwoName, mark: 'O'},
     ];
+
+    let activePlayer = players[0];
 }
