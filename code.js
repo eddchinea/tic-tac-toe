@@ -25,4 +25,5 @@ function gameBoard () {
         console.log(boardWithMarks);
     }
     
+    return { getBoard, placeMark, printBoard }
 }
