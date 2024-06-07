@@ -27,3 +27,15 @@ function gameBoard () {
     
     return { getBoard, placeMark, printBoard }
 }
+
+function Mark () {
+    let value = 0;
+    
+    addMark = (player) => {
+        value = player;
+    }
+
+    getValue = () => value;
+
+    return { addMark, getValue }
+}
