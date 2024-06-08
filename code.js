@@ -63,11 +63,17 @@ function gameController (playerOneName = 'Player One',
     }
 
     const playRound = (row, column) => {
-        console.log(`Placing ${activePlayer}'s mark into row ${row}, column ${column}`);
         board.placeMark(activePlayer.mark, row, column);
 
-        switchPlayer();
-        printNewRound();
+        if (board.getBoard()[row][column].getValue() !== activePlayer.mark) {
+            console.log('Invalid move');
+            printNewRound();
+        } else {
+            console.log(`Placing ${activePlayer}'s mark into row ${row}, column ${column}`);
+            switchPlayer();
+            printNewRound();
+        }
+
     }
 
     printNewRound();
