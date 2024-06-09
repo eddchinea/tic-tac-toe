@@ -57,6 +57,31 @@ function gameController (playerOneName = 'Player One',
     
     const getActivePlayer = () => activePlayer;
 
+    const checkWinner = () => {
+        const boardValues = board.getBoard().map((row) => row.map((mark) => mark.getValue()));
+        const winningCombinations = [
+            [boardValues[0][0], boardValues[0][1], boardValues[0][2]], // Rows
+            [boardValues[1][0], boardValues[1][1], boardValues[1][2]], // Rows
+            [boardValues[2][0], boardValues[2][1], boardValues[2][2]], // Rows
+            [boardValues[0][0], boardValues[1][0], boardValues[2][0]], // Columns
+            [boardValues[0][1], boardValues[1][1], boardValues[2][1]], // Columns
+            [boardValues[0][2], boardValues[1][2], boardValues[2][2]], // Columns
+            [boardValues[0][0], boardValues[1][1], boardValues[2][2]], // Diagonals
+            [boardValues[0][2], boardValues[1][1], boardValues[2][0]], // Diagonals
+        ];
+
+        for (let i = 0; i < winningCombinations.length; i++) {
+            const row = winningCombinations[i];
+            if (row.every((mark) => mark === activePlayer.mark)) {
+                return true;
+            }
+        }
+
+        return false;
+
+
+    }
+
     const printNewRound = () => {
         board.printBoard();
         console.log(`${activePlayer.name}'s turn`);
@@ -64,6 +89,13 @@ function gameController (playerOneName = 'Player One',
 
     const playRound = (row, column) => {
         board.placeMark(activePlayer.mark, row, column);
+
+        //Check for winner
+        if (checkWinner()) {
+            console.log(`${activePlayer.name} wins!`);
+            return;
+        }
+
 
         if (board.getBoard()[row][column].getValue() !== activePlayer.mark) {
             console.log('Invalid move');
