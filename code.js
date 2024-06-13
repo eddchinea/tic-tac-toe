@@ -121,5 +121,7 @@ function screenController () {
     function updateScreen() {
         boardDiv.textContent = '';
 
+        const board = game.getBoard();
+        const activePlayer = game.getActivePlayer();
     }
 }
