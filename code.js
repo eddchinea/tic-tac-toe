@@ -126,5 +126,17 @@ function screenController () {
 
         playerTurn.textContent = `${activePlayer.name}'s turn`;
 
+        board.forEach((row) => {
+            row.forEach((cell, index) => {
+                const cellButton = document.createElement('button');
+                cellButton.classList.add('cell');
+
+                cellButton.dataset.column = index;
+                cellButton.dataset.row = board.indexOf(row);
+                cellButton.textContent = cell.getValue();
+
+                boardDiv.appendChild(cellButton);
+            })
+        })
     }
 }
