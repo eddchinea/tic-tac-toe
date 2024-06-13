@@ -139,4 +139,8 @@ function screenController () {
             })
         })
     }
+
+    function handleClick(event) {
+        
+    }
 }
