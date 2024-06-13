@@ -119,6 +119,7 @@ function screenController () {
     const boardDiv = document.querySelector('.board');
 
     function updateScreen() {
+        boardDiv.textContent = '';
 
     }
 }
