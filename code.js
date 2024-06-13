@@ -110,7 +110,7 @@ function gameController (playerOneName = 'Player One',
 
     printNewRound();
 
-    return {playRound, getActivePlayer}
+    return {playRound, getActivePlayer, getBoard: board.getBoard}
 }
 
 function screenController () {
