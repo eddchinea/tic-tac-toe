@@ -141,6 +141,12 @@ function screenController () {
     }
 
     function handleClick(event) {
-        
+        const selectedRow = event.target.dataset.row;
+        const selectedColumn = event.target.dataset.column;
+
+        if(!selectedRow || !selectedColumn) return;
+
+        game.playRound(selectedRow, selectedColumn);
+        updateScreen();
     }
 }
