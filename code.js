@@ -123,5 +123,7 @@ function screenController () {
 
         const board = game.getBoard();
         const activePlayer = game.getActivePlayer();
+
+        playerTurn.textContent = `${activePlayer.name}'s turn`;
     }
 }
