@@ -8,8 +8,22 @@ html {
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: inherit;
+  padding: inherit;
 }
 
 body {
-  background-color: #F4A460;
+  background-color: #FAE6D5;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 5px #000;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.title {
+  font-weight: 400;
 }
