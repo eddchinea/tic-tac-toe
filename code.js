@@ -151,4 +151,6 @@ function screenController () {
     }
 
     boardDiv.addEventListener('click', handleClick);
+
+    updateScreen();
 }
