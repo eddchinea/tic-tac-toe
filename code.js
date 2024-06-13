@@ -149,4 +149,6 @@ function screenController () {
         game.playRound(selectedRow, selectedColumn);
         updateScreen();
     }
+
+    boardDiv.addEventListener('click', handleClick);
 }
