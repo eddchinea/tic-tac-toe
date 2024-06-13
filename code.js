@@ -6,7 +6,7 @@ function gameBoard () {
     for (let i = 0; i < rows; i++) {
         board[i] = [];
         for (let j = 0; j < columns; j++) {
-            board[i].push(mark())
+            board[i].push(cell())
         }
     }
 
@@ -21,14 +21,14 @@ function gameBoard () {
     }
 
     printBoard = () => {
-        const boardWithMarks = board.map((row) => row.map((mark) => mark.getValue()));
+        const boardWithMarks = board.map((row) => row.map((cell) => cell.getValue()));
         console.log(boardWithMarks);
     }
     
     return { getBoard, placeMark, printBoard }
 }
 
-function mark () {
+function cell () {
     let value = 0;
     
     addMark = (player) => {
@@ -58,7 +58,7 @@ function gameController (playerOneName = 'Player One',
     const getActivePlayer = () => activePlayer;
 
     const checkWinner = () => {
-        const boardValues = board.getBoard().map((row) => row.map((mark) => mark.getValue()));
+        const boardValues = board.getBoard().map((row) => row.map((cell) => cell.getValue()));
         const winningCombinations = [
             [boardValues[0][0], boardValues[0][1], boardValues[0][2]], // Rows
             [boardValues[1][0], boardValues[1][1], boardValues[1][2]], // Rows
@@ -72,7 +72,7 @@ function gameController (playerOneName = 'Player One',
 
         for (let i = 0; i < winningCombinations.length; i++) {
             const row = winningCombinations[i];
-            if (row.every((mark) => mark === activePlayer.mark)) {
+            if (row.every((cell) => cell === activePlayer.mark)) {
                 return true;
             }
         }
@@ -125,5 +125,6 @@ function screenController () {
         const activePlayer = game.getActivePlayer();
 
         playerTurn.textContent = `${activePlayer.name}'s turn`;
+
     }
 }
