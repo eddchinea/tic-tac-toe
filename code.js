@@ -154,3 +154,5 @@ function screenController () {
 
     updateScreen();
 }
+
+screenController();
