@@ -39,6 +39,37 @@ body {
 }
 
 .board {
+  width: 250px;
+  height: 250px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  border: 1px solid #000;
+  cursor: pointer;
+
+  background-color: #FAE6D5;
+}
+
+.cell[data-column="1"] {
+  border-left: none;
+  border-right: none;
+}
+
+.cell[data-column="0"] {
+  border-left: none;
+}
+
+.cell[data-column="2"] {
+  border-right: none;
+}
+
+.cell[data-row="0"], .cell[data-row="2"] {
+  border-top: none;
+  border-bottom: none;
 }
