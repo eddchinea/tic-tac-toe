@@ -27,3 +27,13 @@ body {
 .title {
   font-weight: 400;
 }
+
+.main {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  justify-content: center;
+}
+
+.turn {
+  padding: 25px 0;
+}
