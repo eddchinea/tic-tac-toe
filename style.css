@@ -37,3 +37,8 @@ body {
 .turn {
   padding: 25px 0;
 }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
