@@ -30,7 +30,7 @@ body {
 
 .main {
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 4fr;
   justify-content: center;
 }
 
@@ -77,4 +77,15 @@ body {
 .cell[data-row="0"], .cell[data-row="2"] {
   border-top: none;
   border-bottom: none;
+}
+
+.restart {
+  font-size: 1rem;
+  margin-top: 25px;
+  justify-self: center;
+  padding: 10px 20px;
+  background-color: #F4A460;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #00000094;
 }
