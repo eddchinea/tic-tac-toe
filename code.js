@@ -152,7 +152,7 @@ function screenController () {
         })
     }
 
-    function handleClick(event) {
+    function handleBoardClick(event) {
         const selectedRow = event.target.dataset.row;
         const selectedColumn = event.target.dataset.column;
 
@@ -162,7 +162,7 @@ function screenController () {
         updateScreen();
     }
 
-    boardDiv.addEventListener('click', handleClick);
+    boardDiv.addEventListener('click', handleBoardClick);
 
     updateScreen();
 }
