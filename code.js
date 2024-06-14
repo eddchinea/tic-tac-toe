@@ -145,6 +145,7 @@ function screenController () {
                 if (game.checkWinner()) {
                     playerTurn.textContent = `${activePlayer.name} wins!`;
                     cellButton.disabled = true;
+
                 }
 
                 boardDiv.appendChild(cellButton);
@@ -160,6 +161,10 @@ function screenController () {
 
         game.playRound(selectedRow, selectedColumn);
         updateScreen();
+    }
+
+    function handleRestartClick() {
+
     }
 
     boardDiv.addEventListener('click', handleBoardClick);
