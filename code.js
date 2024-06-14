@@ -110,7 +110,7 @@ function gameController (playerOneName = 'Player One',
 
     printNewRound();
 
-    return {playRound, getActivePlayer, getBoard: board.getBoard}
+    return {playRound, getActivePlayer, getBoard: board.getBoard, checkWinner}
 }
 
 function screenController () {
@@ -126,6 +126,7 @@ function screenController () {
 
         playerTurn.textContent = `${activePlayer.name}'s turn`;
 
+
         board.forEach((row) => {
             row.forEach((cell, index) => {
                 const cellButton = document.createElement('button');
@@ -139,6 +140,11 @@ function screenController () {
                     cellButton.disabled = true;
                 } else {
                     cellButton.textContent = '';
+                }
+
+                if (game.checkWinner()) {
+                    playerTurn.textContent = `${activePlayer.name} wins!`;
+                    cellButton.disabled = true;
                 }
 
                 boardDiv.appendChild(cellButton);
