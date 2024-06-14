@@ -57,6 +57,12 @@ function gameController (playerOneName = 'Player One',
     
     const getActivePlayer = () => activePlayer;
 
+    const restartGame = () => {
+        board.getBoard().forEach((row) => row.forEach((cell) => cell.addMark(0)));
+        activePlayer = players[0];
+        printNewRound();
+    }
+
     const checkWinner = () => {
         const boardValues = board.getBoard().map((row) => row.map((cell) => cell.getValue()));
         const winningCombinations = [
@@ -110,13 +116,14 @@ function gameController (playerOneName = 'Player One',
 
     printNewRound();
 
-    return {playRound, getActivePlayer, getBoard: board.getBoard, checkWinner}
+    return {playRound, getActivePlayer, getBoard: board.getBoard, checkWinner, restartGame}
 }
 
 function screenController () {
     const game = gameController();
     const playerTurn = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
+    const restartButton = document.querySelector('.restart');
 
     function updateScreen() {
         boardDiv.textContent = '';
@@ -164,10 +171,13 @@ function screenController () {
     }
 
     function handleRestartClick() {
-
+        game.restartGame();
+        updateScreen();
     }
 
     boardDiv.addEventListener('click', handleBoardClick);
+    restartButton.addEventListener('click', handleRestartClick);
+
 
     updateScreen();
 }
