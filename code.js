@@ -135,6 +135,12 @@ function screenController () {
                 cellButton.dataset.row = board.indexOf(row);
                 cellButton.textContent = cell.getValue();
 
+                if(cell.getValue() !== 0) {
+                    cellButton.disabled = true;
+                } else {
+                    cellButton.textContent = '';
+                }
+
                 boardDiv.appendChild(cellButton);
             })
         })
