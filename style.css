@@ -40,10 +40,9 @@ body {
 }
 
 .board {
-  width: 250px;
-  height: 250px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 100px;
 }
 
 .cell {
@@ -55,6 +54,11 @@ body {
   cursor: pointer;
 
   background-color: #FAE6D5;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  color: #000;
 }
 
 .cell[data-column="1"] {
