@@ -201,6 +201,7 @@ function screenController () {
     }
 
     function handleNoNamesClick(e) {
+        game.changePlayerNames('Player one', 'Player two');
         e.preventDefault();
         modal.close();
         updateScreen();
