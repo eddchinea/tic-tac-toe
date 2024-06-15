@@ -183,6 +183,7 @@ function screenController () {
     }
 
     function handleRestartClick() {
+        modal.showModal();
         game.restartGame();
         updateScreen();
     }
@@ -193,7 +194,7 @@ function screenController () {
         if (playerOne.value === '' || playerTwo.value === '') {
             return;
         }
-        
+
         e.preventDefault();
         modal.close();
         updateScreen();
