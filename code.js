@@ -188,8 +188,13 @@ function screenController () {
     }
 
     function handleStartClick(e) {
-        e.preventDefault();
         game.changePlayerNames(playerOne.value, playerTwo.value);
+
+        if (playerOne.value === '' || playerTwo.value === '') {
+            return;
+        }
+        
+        e.preventDefault();
         modal.close();
         updateScreen();
     }
