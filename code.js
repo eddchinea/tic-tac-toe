@@ -187,8 +187,15 @@ function screenController () {
         updateScreen();
     }
 
-    function handleStartClick() {
+    function handleStartClick(e) {
+        e.preventDefault();
         game.changePlayerNames(playerOne.value, playerTwo.value);
+        modal.close();
+        updateScreen();
+    }
+
+    function handleNoNamesClick(e) {
+        e.preventDefault();
         modal.close();
         updateScreen();
     }
@@ -197,6 +204,7 @@ function screenController () {
     restartButton.addEventListener('click', handleRestartClick);
 
     startBtn.addEventListener('click', handleStartClick);
+    startNoNamesBtn.addEventListener('click', handleNoNamesClick);
 
     updateScreen();
 }
