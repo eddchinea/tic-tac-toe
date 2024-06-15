@@ -130,6 +130,8 @@ function screenController () {
 
     const modal = document.querySelector('.dialog');
     const form = document.querySelector('.form');
+    const startBtn = document.querySelector('.start-names-btn');
+    const startNoNamesBtn = document.querySelector('.start-no-names-btn');
 
     function updateScreen() {
         boardDiv.textContent = '';
