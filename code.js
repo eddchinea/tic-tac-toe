@@ -40,13 +40,12 @@ function cell () {
     return { addMark, getValue }
 }
 
-function gameController (playerOneName = 'Player One', 
-                         playerTwoName = 'Player Two') {
+function gameController () {
     const board = gameBoard();
 
     const players = [
-        {name: playerOneName, mark: 'X'},
-        {name: playerTwoName, mark: 'O'},
+        {name: 'Player one', mark: 'X'},
+        {name: 'Player two', mark: 'O'},
     ];
 
     let activePlayer = players[0];
@@ -123,7 +122,7 @@ function screenController () {
     const playerOne = document.querySelector('#player1');
     const playerTwo = document.querySelector('#player2');
 
-    const game = gameController(playerOne.value, playerTwo.value);
+    const game = gameController();
     const playerTurn = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
     const restartButton = document.querySelector('.restart');
