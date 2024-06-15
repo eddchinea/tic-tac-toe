@@ -189,7 +189,7 @@ function screenController () {
 
     function handleStartClick() {
         game.changePlayerNames(playerOne.value, playerTwo.value);
-        modal.closest();
+        modal.close();
         updateScreen();
     }
 
