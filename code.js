@@ -123,11 +123,13 @@ function screenController () {
     const playerOne = document.querySelector('#player1');
     const playerTwo = document.querySelector('#player2');
 
-
     const game = gameController(playerOne.value, playerTwo.value);
     const playerTurn = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
     const restartButton = document.querySelector('.restart');
+
+    const modal = document.querySelector('.dialog');
+    const form = document.querySelector('.form');
 
     function updateScreen() {
         boardDiv.textContent = '';
