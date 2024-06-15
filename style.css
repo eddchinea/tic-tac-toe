@@ -90,7 +90,7 @@ body {
   box-shadow: 1px 1px 5px #00000094;
 }
 
-.dialog {
+.dialog[open] {
   display: flex;
   flex-direction: column;
   justify-content: center;
