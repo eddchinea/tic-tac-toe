@@ -48,6 +48,11 @@ function gameController () {
         {name: 'Player two', mark: 'O'},
     ];
 
+    const changePlayerNames = (playerOneName, playerTwoName) => {
+        players[0].name = playerOneName;
+        players[1].name = playerTwoName;
+    }
+
     let activePlayer = players[0];
 
     const switchPlayer = () => {
@@ -115,7 +120,7 @@ function gameController () {
 
     printNewRound();
 
-    return {playRound, getActivePlayer, getBoard: board.getBoard, checkWinner, restartGame}
+    return {playRound, getActivePlayer, getBoard: board.getBoard, checkWinner, restartGame, changePlayerNames}
 }
 
 function screenController () {
