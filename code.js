@@ -170,6 +170,11 @@ function screenController () {
                 boardDiv.appendChild(cellButton);
             })
         })
+
+        if (!game.checkWinner() && board.flat().every((cell) => cell.getValue() !== 0)) {
+            playerTurn.textContent = 'It\'s a tie!';
+        }
+
     }
 
     function handleBoardClick(event) {
